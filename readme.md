@@ -1,7 +1,7 @@
 
 # go-env
 
-A library to abstract importing environment variables similar to flags (eg. [go-option](https://github.com/cdelorme/go-option).
+A library to abstract importing environment variables similar to flags (eg. [go-option](https://github.com/cdelorme/go-option)).
 
 
 ## sales pitch
