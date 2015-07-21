@@ -1,24 +1,25 @@
 
 # go-env
 
-A library to abstract importing environment variables similar to flags (eg. [go-option](https://github.com/cdelorme/go-option)).
+A library to abstract registration of named environment variables to load into shared application configuration.
 
 
 ## sales pitch
 
-My library aims to deliver a simple modular solution.  It provides a basic abstraction that matches the way my other libraries load application settings, allowing you to easily mix the approaches used to load configuration.
+My library aims to deliver the simplest possible implementation of named environment variable registration.
 
-Features:
+The `Var()` method handles registration which accepts the name you will refer to it as, followed by the environment variable name to look for.
 
-- search environment variables by `key`
-- return values by application-matched `name`
+When you run `Parse()` it returns a `map[string]interface{}` which can be manipulated or merged with other forms of configuration gather.  A [map library](https://github.com/cdelorme/go-maps) is available aid with parsing and merging.
 
-It does not:
+What it does not provide:
 
-- provide a comprehensive testing suite (for its two functions)
-- depend on other libraries
-- provide wildly extensible abstractions
-- have more than 50 lines of code
+- unit tests
+- abstractions
+- dependency on other non-core libraries
+- more than 40 lines of code
+
+This package was built for use in combination with [go-config](https://github.com/cdelorme/go-config) and [go-option](https://github.com/cdelorme/go-option) to produce a single `map[string]interface{}` of application settings.
 
 
 ## usage
@@ -39,4 +40,3 @@ Once you have registered the environment variables you are looking for you can g
 
 	envs := appEnvs.Parse()
 
-_You can then use [go-maps](https://github.com/cdelorme/go-maps), or any tool of your choice, to merge your application settings and extract values of the correct type for your needs._
