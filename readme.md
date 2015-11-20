@@ -12,9 +12,10 @@ The `Var()` method handles registration which accepts the name you will refer to
 
 When you run `Parse()` it returns a `map[string]interface{}` which can be manipulated or merged with other forms of configuration gather.  A [map library](https://github.com/cdelorme/go-maps) is available aid with parsing and merging.
 
+It is also fully-tested.
+
 What it does not provide:
 
-- unit tests
 - abstractions
 - dependency on other non-core libraries
 - more than 40 lines of code
